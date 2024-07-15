@@ -1,0 +1,33 @@
+## Configuración de un servidor con FastAPI
+
+**Creación de un entorno virtual (venv):** Se creó un entorno virtual utilizando `venv`. Un entorno virtual es un ambiente aislado que permite instalar y gestionar paquetes de Python específicos para un proyecto, sin afectar al sistema global.
+
+`python -m venv nombre_del_entorno`
+
+**Activación del entorno virtual:** Se activó el entorno virtual para asegurar que las dependencias se instalen y se ejecuten dentro de este entorno aislado.
+
+`source nombre_del_entorno/bin/activate # En sistemas basados en Unix`
+
+**Update de pip**: Una ves que se creo el entorno virtual y se activo en la terminal, se necesita ejecutar el siguiente comando para la actualización de pip:
+
+`python -m pip install --upgrade pip`
+
+**Instalación de Uvicorn:** Uvicorn es un servidor ASGI (Asynchronous Server Gateway Interface) que se utiliza para ejecutar aplicaciones FastAPI de manera asincrónica. Se instaló Uvicorn dentro del entorno virtual.
+
+`pip install uvicorn`
+
+
+**Desarrollo de una aplicación FastAPI simple:** Se creó un archivo Python con un código mínimo de FastAPI. El código define una instancia de la clase `FastAPI` y una ruta (`/`) que responde con un mensaje "Hello world!" cuando se realiza una solicitud GET.
+
+```Python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get('/')
+def message():
+    return "Hello world!"
+
+**Ejecutar uvicorn**: Una vez instalado el uvicorn y creado el archivo `main.py` podemos ejecuat el siguiente comando para visualizar el mensaje en el navegador. 
+
+`uvicorn main:app`
